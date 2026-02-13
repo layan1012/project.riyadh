@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مناطق ومحافظات الرياض</title>
+    <style>
+        :root {
+            /* إعدادات الزجاج الموحدة */
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --glass-blur: blur(20px);
+            --text-glow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/King_fahad_olaya-road_Riyadh.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        body::before {
+            content: ''; position: absolute; inset: 0;
+            background: rgba(0, 0, 0, 0.3); z-index: -1;
+        }
+
+        h1, h2, h3, p, span {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: var(--text-glow);
+        }
+
+        input[type="radio"] { display: none; }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            z-index: 10;
+        }
+        
+        header h1 { 
+            font-weight: 300; letter-spacing: 3px; font-size: 2.2rem;
+        }
+
+        .students-list {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .students-list h3 {
+            font-size: 1.1rem; color: #ffcc00; margin-bottom: 5px;
+        }
+        .students-list p {
+            font-size: 0.9rem; color: rgba(255,255,255,0.8);
+        }
+
+        .layout {
+            display: flex;
+            height: 100%;
+            padding: 30px 50px;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        .sidebar {
+            width: 240px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 20;
+        }
+
+        .btn-container { position: relative; height: 80px; }
+
+        .btn {
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            cursor: pointer; transition: 0.3s;
+            position: absolute; top: 0; left: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .close-trigger {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 10; cursor: pointer; display: none;
+        }
+
+        .display-area {
+            flex-grow: 1; height: 90%; position: relative;
+            display: flex; justify-content: center; align-items: center;
+            pointer-events: none;
+        }
+
+        .glass-card {
+            position: absolute; width: 100%; height: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px; padding: 30px;
+            display: flex; flex-direction: column;
+            opacity: 0; transform: scale(0.95) translateY(20px);
+            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            pointer-events: none;
+        }
+
+        /* تعديل جوهري للصور: إزالة الحجم الإجباري */
+        .image-banner {
+            /* الحاوية مجرد مكان للتوسط */
+            height: auto; 
+            width: 100%;
+            margin: 15px 0;
+            display: flex; 
+            justify-content: center; /* توسيط الصورة */
+            flex-shrink: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .image-banner img { 
+            /* التحكم في الصورة نفسها */
+            max-width: 100%;      /* لا تتجاوز عرض البطاقة */
+            max-height: 300px;    /* لا تكون طويلة جداً وتغطي النص */
+            width: auto;          /* العرض طبيعي حسب الصورة */
+            height: auto;         /* الارتفاع طبيعي حسب الصورة */
+            
+            object-fit: contain;  /* إظهار الصورة بالكامل */
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .text-content {
+            flex-grow: 1; text-align: right; padding: 0 10px; overflow-y: auto;
+        }
+        .text-content::-webkit-scrollbar { width: 5px; }
+        .text-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+
+        .text-content h2 { 
+            font-size: 2rem; margin-bottom: 15px; 
+            border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px;
+        }
+        .text-content h3 { font-size: 1.3rem; margin-top: 15px; color: #ffcc00; }
+        .text-content p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px; }
+
+        .student-signature {
+            padding-top: 15px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        #r1:checked ~ .layout .display-area .c1,
+        #r2:checked ~ .layout .display-area .c2,
+        #r3:checked ~ .layout .display-area .c3,
+        #r4:checked ~ .layout .display-area .c4,
+        #r5:checked ~ .layout .display-area .c5,
+        #r6:checked ~ .layout .display-area .c6 {
+            opacity: 1; transform: scale(1) translateY(0); pointer-events: auto;
+        }
+
+        #r1:checked ~ .layout .sidebar .b1 .btn,
+        #r2:checked ~ .layout .sidebar .b2 .btn,
+        #r3:checked ~ .layout .sidebar .b3 .btn,
+        #r4:checked ~ .layout .sidebar .b4 .btn,
+        #r5:checked ~ .layout .sidebar .b5 .btn,
+        #r6:checked ~ .layout .sidebar .b6 .btn {
+            background: rgba(255, 255, 255, 0.25); border-color: white;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+        }
+
+        #r1:checked ~ .layout .sidebar .b1 .close-trigger,
+        #r2:checked ~ .layout .sidebar .b2 .close-trigger,
+        #r3:checked ~ .layout .sidebar .b3 .close-trigger,
+        #r4:checked ~ .layout .sidebar .b4 .close-trigger,
+        #r5:checked ~ .layout .sidebar .b5 .close-trigger,
+        #r6:checked ~ .layout .sidebar .b6 .close-trigger { display: block; }
+
+    </style>
+</head>
+<body>
+
+    <input type="radio" name="view" id="reset" checked>
+    <input type="radio" name="view" id="r1">
+    <input type="radio" name="view" id="r2">
+    <input type="radio" name="view" id="r3">
+    <input type="radio" name="view" id="r4">
+    <input type="radio" name="view" id="r5">
+    <input type="radio" name="view" id="r6">
+
+    <header><h1>مناطق ومحافظات الرياض</h1></header>
+
+    <div class="layout">
+        <div class="sidebar">
+            <div class="btn-container b1"><label class="btn" for="r1"><h3>الرياض</h3></label><label class="close-trigger" for="reset"></label></div>
+            <div class="btn-container b2"><label class="btn" for="r2"><h3>الدرعية</h3></label><label class="close-trigger" for="reset"></label></div>
+            <div class="btn-container b3"><label class="btn" for="r3"><h3>الخرج</h3></label><label class="close-trigger" for="reset"></label></div>
+        </div>
+
+        <div class="display-area">
+            <div class="glass-card c1">
+                <div class="text-content">
+                    <h2>الرياض</h2>
+                    <h3>العاصمة والقلب النابض</h3>
+                    <p>الرياض ليست مجرد عاصمة إدارية للمملكة، بل هي مركز الثقل الاقتصادي والسياسي في الشرق الأوسط. تقع في قلب نجد وتتميز بمزجها الفريد بين الأصالة البدوية والحياة المدنية المتسارعة.</p>
+                    <h3>أهم الوجهات السياحية والترفيهية</h3>
+                    <p>تزخر الرياض بأماكن سياحية متنوعة، أبرزها "بوليفارد سيتي" و"فيا رياض" لعشاق الترفيه الفاخر، و"سوق الزل" لمحبي التراث والتحف.</p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/1200x/69/dc/87/69dc8770fddba82ad2f21ec30d793c3f.jpg" alt="الرياض"></div>
+                <div class="student-signature">
+                   ليان ناصر
+                    </div>
+            </div>
+
+            <div class="glass-card c2">
+                <div class="text-content">
+                    <h2>الدرعية</h2>
+                    <h3>جوهرة التاريخ ومهد الدولة</h3>
+                    <p>الدرعية هي الرمز التاريخي الأهم في السعودية، كونها عاصمة الدولة السعودية الأولى. تتميز بطرازها المعماري النجدي الطيني الذي يعكس عراقة الماضي.</p>
+                    <h3>أبرز المعالم التراثية والحديثة</h3>
+                    <p>الوجهة الأولى بلا منازع هي "حي الطريف التاريخي" بقصوره ومتاحفه، يليه "مطل البجيري" الذي يضم أرقى المطاعم والمقاهي بإطلالة ساحرة على الآثار.</p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/736x/a6/df/4e/a6df4e8f9335a2666cdbfeaf34e07823.jpg" alt="الدرعية"></div>
+                <div class="student-signature">
+                   نوف بارباع
+                </div>
+            </div>
+
+            <div class="glass-card c3">
+                <div class="text-content">
+                    <h2>الخرج</h2>
+                    <h3>سلة الغذاء والعمق الاستراتيجي</h3>
+                    <p>تقع جنوب شرق الرياض وتُعرف بلقب "سلة الغذاء" لخصوبة أراضيها ووفرة مياهها الجوفية، مما جعلها مقراً لأكبر شركات الألبان والمزارع في المملكة.</p>
+                    <h3>أماكن التنزه والمعالم السياحية</h3>
+                    <p>تشتهر الخرج بـ "قصر الملك عبدالعزيز" التاريخي الذي يعد تحفة معمارية، و"عيون الخرج" (مثل عين الضلع) التي كانت تروي المزارع قديماً.</p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/1200x/15/97/63/159763b0e8d7b33ace419898392d9ff9.jpg" alt="الخرج"></div>
+                <div class="student-signature">
+                   موده باحشوان       
+                </div>
+            </div>
+
+            <div class="glass-card c4">
+                <div class="text-content">
+                    <h2>وادي الدواسر</h2>
+                    <h3>بوابة الربع الخالي وعراقة الإبل</h3>
+                    <p>يعد وادي الدواسر أحد أكبر الأودية في الجزيرة العربية، ويتميز بموقعه الاستراتيجي على حافة صحراء الربع الخالي. تشتهر المحافظة بآثار حضارة "كندة" القديمة.</p>
+                    <h3>المواقع الأثرية والسياحة الصحراوية</h3>
+                    <p>أهم معالمها السياحية هي "قرية الفاو الأثرية" التي تحكي تاريخاً يعود لآلاف السنين، و"قصر الملك عبدالعزيز التاريخي".</p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/736x/82/0c/da/820cda1510c3c89b559713d882951cf4.jpg" alt="وادي الدواسر"></div>
+                <div class="student-signature">
+                   مايا عادل    
+                </div>
+            </div>
+
+            <div class="glass-card c5">
+                <div class="text-content">
+                    <h2>المجمعة</h2>
+                    <h3>ملتقى الطرق ومدينة النخيل</h3>
+                    <p>تعتبر المجمعة عاصمة إقليم سدير وتقع في مفترق طرق حيوي يربط الرياض بمناطق الشمال والشرق والكويت. تتميز ببيئتها الزراعية الخلابة.</p>
+                    <h3>أبرز المنتزهات والمعالم التاريخية</h3>
+                    <p>تتصدر "قلعة المرقب" المشهد كأشهر معلم تاريخي يطل على المدينة، بجانب "القرية التراثية" وسط المجمعة. </p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/1200x/3e/0b/e1/3e0be1231c97301717725c167d1cf300.jpg" alt="المجمعة"></div>
+                <div class="student-signature">
+                   ليان الرفاعي
+                </div>
+            </div>
+
+            <div class="glass-card c6">
+                <div class="text-content">
+                    <h2>القويعية</h2>
+                    <h3>أرض الذهب والتكوينات الصخرية</h3>
+                    <p>تقع القويعية غرب الرياض وتشتهر بلقب "أرض الذهب" لاحتواء باطن أرضها على معادن ثمينة ومناجم تعدين. جغرافياً، هي منطقة واسعة جداً تتميز بتضاريسها الصخرية.</p>
+                    <h3>أماكن الكشتات والسياحة البيئية</h3>
+                    <p>تعتبر القويعية جنة لعشاق البر والجيولوجيا، حيث يمكن زيارة "جبال يذبل" الشهيرة وتكويناتها الصخرية الغريبة. كما يحرص الزوار على استكشاف "نفود السر".</p>
+                </div>
+                <div class="image-banner"><img src="https://i.pinimg.com/736x/c5/5e/fa/c55efa5949c8e5033e51d3ec86e02df2.jpg" alt="القويعية"></div>
+                <div class="student-signature">
+                 أفنان تركي
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="btn-container b4"><label class="btn" for="r4"><h3>وادي الدواسر</h3></label><label class="close-trigger" for="reset"></label></div>
+            <div class="btn-container b5"><label class="btn" for="r5"><h3>المجمعة</h3></label><label class="close-trigger" for="reset"></label></div>
+            <div class="btn-container b6"><label class="btn" for="r6"><h3>القويعية</h3></label><label class="close-trigger" for="reset"></label></div>
+        </div>
+    </div>
+
+    <div class="students-list">
+        <h3>عمل الطالبات:</h3>
+        <p>
+ليان الرفاعي | أفنان تركي | مايا عادل | موده باحشوان | نوف بارباع | ليان ناصر          </p>
+    </div>
+
+</body>
+</html>
