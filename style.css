@@ -1,3 +1,6 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 html { 
     scroll-behavior: smooth; 
 }
@@ -201,4 +204,47 @@ footer {
     background-color: #050505; 
     color: #888; 
     border-top: 2px solid #333; 
+}
+@media (max-width: 768px) {
+    /* تعديل شريط التنقل */
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .navbar a {
+        font-size: 1em;
+    }
+
+    /* تصغير خطوط الهيدر */
+    header {
+        padding: 40px 15px;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+
+    /* تقليل المساحات داخل الأقسام */
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+
+    /* تصغير ويدجت الطقس */
+    .weather-widget .temperature {
+        font-size: 3.5em;
+    }
+
+    /* تعديل شبكة المدن */
+    .cities-grid {
+        grid-template-columns: 1fr; /* عرض كرت واحد في كل سطر على الجوال */
+        gap: 20px;
+    }
 }
