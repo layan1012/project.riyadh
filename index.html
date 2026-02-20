@@ -1,145 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>الرياض | أصالة ومستقبل</title>
-    <meta name="description" content="موقع شامل عن مدينة الرياض: يوم التأسيس، الاستراتيجية، المعالم التاريخية، والمشاريع الحديثة.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <button id="scroll-top" onclick="scrollToTop()">↑</button>
-
-    <header id="navbar">
-        <div class="logo">RIYADH <span class="dot">2030</span></div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav id="nav-links">
-            <a href="#hero">الرئيسية</a>
-            <a href="#founding">يوم التأسيس</a>
-            <a href="#history">معالم التاريخ</a>
-            <a href="#strategy">الاستراتيجية</a>
-            <a href="#modern">الرياض الحديثة</a>
-            <a href="#comments">شاركنا رأيك</a>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1 class="glitch">الرياض</h1>
-            <p>حيث يلتقي عبق الماضي بطموح المستقبل</p>
-            <a href="#founding" class="cta-btn">ابدأ الرحلة</a>
-        </div>
-    </section>
-
-    <section id="founding" class="reveal">
-        <div class="section-header">
-            <img src="https://i.pinimg.com/1200x/98/d6/cd/98d6cdf9b42b976d8a58f62a1c0688b3.jpg" alt="شعار التأسيس" class="founding-logo">
-            <h2>يوم التأسيس - 1727م</h2>
-            <p class="subtitle">ثلاثة قرون من العز والفخر</p>
-        </div>
-        <div class="grid-container">
-            <div class="card legacy-card">
-                <h3>البداية</h3>
-                <p>
-                    تأسست الدولة السعودية الأولى عام 1727م على يد الإمام محمد بن سعود، وعاصمتها الدرعية
-                    </p>
-            </div>
-            <div class="card legacy-card">
-                <h3>الرمزية</h3>
-                <p>يمثل هذا اليوم عمقنا التاريخي والحضاري، واحتفاءً بإرثنا الثقافي الأصيل.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="history" class="reveal">
-        <h2 class="section-title">معالم تحكي التاريخ</h2>
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://dealapp.sa/blog/wp-content/uploads/2024/09/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D9%85%D8%B5%D9%85%D9%83-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6-750x430.jpg');"></div>
-                <div class="card-info">
-                    <h3>قصر المصمك</h3>
-                    <p>الحصن الذي شهد انطلاقة توحيد المملكة على يد الملك عبدالعزيز.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://i.pinimg.com/1200x/cc/a3/0a/cca30abb30b5b6310b32b01634eef918.jpg');"></div>
-                <div class="card-info">
-                    <h3>حي الطريف</h3>
-                    <p>موقع تراث عالمي في الدرعية، يحكي قصص الدولة السعودية الأولى.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="strategy" class="reveal dark-section">
-        <div class="strategy-content">
-            <h2>استراتيجية الرياض 2030</h2>
-            <ul class="strategy-list">
-                <li><span>👥</span> مضاعفة عدد السكان ليصل إلى 15-20 مليون نسمة.</li>
-                <li><span>🌳</span> مشروع "الرياض الخضراء" لزراعة 7.5 مليون شجرة.</li>
-                <li><span>💼</span> تحويل الرياض إلى واحدة من أكبر 10 اقتصاديات مدن في العالم.</li>
-                <li><span>🚇</span> تطوير شبكة نقل عالمية (مترو الرياض وحافلات الرياض).</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="modern" class="reveal">
-        <h2 class="section-title">الرياض الحديثة</h2>
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://i.pinimg.com/1200x/5b/23/73/5b2373b484557c1dfc44e855a9815f26.jpg');"></div>
-                <div class="card-info">
-                    <h3>برج المملكة</h3>
-                    <p>أيقونة العاصمة الحديثة.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://i.pinimg.com/736x/a2/99/db/a299db39c64f79d4840d3ac109737f8b.jpg');"></div>
-                <div class="card-info">
-                    <h3>المركز المالي (KAFD)</h3>
-                    <p>عاصمة الشرق الأوسط الاقتصادية.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://i.pinimg.com/1200x/2f/e9/2f/2fe92fea9d96891bd9d42203d6818957.jpg');"></div>
-                <div class="card-info">
-                    <h3>القدية</h3>
-                    <p>عاصمة الترفيه والرياضة والفنون.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="comments" class="reveal">
-        <h2 class="section-title">دفتر الزوار</h2>
-        <p style="text-align: center; color: #777;">اترك بصمتك في موقعنا</p>
-        
-        <div class="comment-box-container">
-            <form id="comment-form">
-                <input type="text" id="visitor-name" placeholder="الاسم" required>
-                <textarea id="visitor-msg" placeholder="اكتب تعليقك هنا..." required></textarea>
-                <button type="submit" class="cta-btn full-width">إرسال التعليق</button>
-            </form>
-            <div id="comments-display">
-                </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>
-            تصميم الطالبات : ليان الرفاعي | أفنان تركي | مايا عادل | موده باحشوان | نوف بارباع | ليان ناصر 
-            </p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
