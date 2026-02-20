@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منطقة الرياض</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="#about">عن الرياض</a></li>
+        <li><a href="#landmarks">المعالم</a></li>
+        <li><a href="#weather">الطقس</a></li>
+        <li><a href="#student-pages">المحافظات</a></li>
+        <li><a href="#comments">التعليقات</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>منطقة الرياض</h1>
+    <p>قلب المملكة النابض بالأصالة والتطور</p>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>عن الرياض</h2>
+        <p>تعتبر الرياض العاصمة الإدارية للمملكة العربية السعودية. وهي المنطقة الأكثر سكاناً على مستوى المملكة، كما أنها الأكبر من حيث التقسيم الإداري باحتوائها على 21 محافظة. تمثل الرياض المركز المالي والاقتصادي للبلاد، وتتميز بمزجها المبهر بين الأصالة التاريخية والتطور العمراني الحديث.</p>
+    </section>
+
+    <section id="landmarks">
+        <h2>أهم معالمها</h2>
+        <p>تزخر الرياض بمعالم سياحية وتاريخية بارزة، مثل حي الطريف التاريخي في الدرعية، وقصر المصمك. أما في الجانب الحديث، فتبرز ناطحات السحاب كبرج المملكة وبرج الفيصلية، بالإضافة إلى مناطق الترفيه الكبرى مثل "البوليفارد".</p>
+    </section>
+
+    <section id="weather">
+        <h2>الطقس الآن</h2>
+        <div class="weather-widget">
+            <span class="temperature">26°C</span>
+            <p>صافٍ ومُشمس</p>
+        </div>
+    </section>
+
+    <section id="student-pages">
+        <h2>صفحات مدن الطالبات (مجموعة القائدة: ليان وسيم)</h2>
+        <p>تصفح المدن الرقمية الخاصة بكل طالبة والمصممة بهوية وطنية، اضغط على المدينة لزيارة صفحتها:</p>
+        
+        <div class="cities-grid">
+            <a href="diriyah.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/1200x/bf/a1/09/bfa10907d12859ca53604114f1bef838.jpg" alt="الدرعية">
+                </div>
+                <h3>الدرعية</h3>
+                <p>الطالبة: نوف اكرم</p>
+            </a>
+
+            <a href="riyadh-city.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/736x/95/ac/45/95ac456f0571ae53822bc6d0e1be93c8.jpg" alt="الرياض">
+                </div>
+                <h3>الرياض</h3>
+                <p>الطالبة: ليان ناصر</p>
+            </a>
+
+            <a href="quwayiyah.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/736x/cd/e1/9f/cde19fd63fa38c3299ffe18e1bcfb61d.jpg" alt="القويعية">
+                </div>
+                <h3>القويعية</h3>
+                <p>الطالبة: افنان</p>
+            </a>
+
+            <a href="kharj.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/1200x/71/51/3d/71513d2d27d8d94b653d166452c3134d.jpg" alt="الخرج">
+                </div>
+                <h3>الخرج</h3>
+                <p>الطالبة: موده</p>
+            </a>
+
+            <a href="majmaah.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/1200x/5d/f7/ed/5df7edef9c2097dcce3c60f153589a0b.jpg" alt="المجمعة">
+                </div>
+                <h3>المجمعة</h3>
+                <p>الطالبة: ليان وسيم (الليدر)</p>
+            </a>
+
+            <a href="wadi.html" class="city-card">
+                <div class="img-container">
+                    <img src="https://i.pinimg.com/1200x/17/7d/4b/177d4b078dd368e1fdbf6784a1f35f5d.jpg" alt="وادي الدواسر">
+                </div>
+                <h3>وادي الدواسر</h3>
+                <p>الطالبة: مايا عادل</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="comments">
+        <h2>شاركنا رأيك</h2>
+        <form class="comment-form">
+            <input type="text" placeholder="الاسم الكريم" required>
+            <textarea placeholder="أضف تعليقك هنا..." rows="4" required></textarea>
+            <button type="button" onclick="alert('تم إرسال تعليقك بنجاح!')">إرسال التعليق</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>الرياض ليست مجرد عاصمة، بل هي قلب المملكة النابض، وكل محافظة تابعة لها تمتلك طابعاً وتاريخاً مميزاً. إن تصميم موقع يبرز هذه التفاصيل يمثل فرصة رائعة لتقديم صورة مشرفة عن العاصمة بأيادي وطنية مبدعة.</p>
+</footer>
+
+</body>
+</html>

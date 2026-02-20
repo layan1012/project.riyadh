@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحة مدينة وادي الدواسر - تصميم الطالبة مايا عادل. أخبار المدينة ومشاريعها التنموية.">
+    <title>مدينة وادي الدواسر | مايا عادل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="city_style.css">
+</head>
+<body>
+
+    <nav class="mobile-nav">
+        <div class="hamburger" id="hamburger" tabindex="0" aria-label="فتح القائمة">
+            &#9776;
+        </div>
+        <div class="nav-title">موقع مدينتك</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">العودة للموقع الرئيسي</a></li>
+            <li><a href="#news">خبر اليوم</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+        </ul>
+    </nav>
+
+    <div class="founding-day-banner">
+        <img src="https://i.pinimg.com/1200x/98/d6/cd/98d6cdf9b42b976d8a58f62a1c0688b3.jpg" alt="شعار يوم التأسيس" class="founding-logo">
+        <p>يوم بدينا... ثلاثة قرون من العز والفخر. نحتفي بيوم التأسيس (1727م) لنستذكر جذورنا الراسخة وهويتنا الوطنية الأصيلة التي بُنيت عليها أمجاد هذه البلاد.</p>
+    </div>
+
+    <header class="city-header">
+        <h1>أخبار مدينة وادي الدواسر</h1>
+        <p class="welcome-msg">أهلاً بكم في وادي الدواسر مهد البطولات وعاصمة الثقافة. يسعدنا أن نشارككم أحدث تطورات مدينتنا.</p>
+    </header>
+
+    <main class="city-container">
+        
+        <div class="images-gallery">
+            <img src="https://i.pinimg.com/736x/b3/bf/98/b3bf9827b6364f67f8b7bb9eb8553787.jpg" alt="صورة 1 للدرعية" class="responsive-img">
+            <img src="https://i.pinimg.com/736x/a9/cc/d6/a9ccd68040fe1f52bddd8f64c15db164.jpg" alt="صورة 2 للدرعية" class="responsive-img">
+        </div>
+
+        <div class="news-sections">
+            <section class="news-card">
+                <h2>عن المنطقة</h2>
+                <p>تقع جنوب منطقة الرياض، وهي منطقة زراعية عريقة تشتهر بإنتاج المحاصيل المختلفة (خاصة الحمضيات والتمور).</p>
+            </section>
+
+            <section class="news-card">
+                <h2>أهم تضاريسها</h2>
+                <p>تقع في منخفض واسع يسمى "وادي الدواسر"، وهو وادي قديم وعريض يمتد من جبال عسير حتى الربع الخالي، وتحده الكثبان الرملية.</p>
+            </section>
+
+            <section class="news-card">
+                <h2>الطقس</h2>
+                <p>صحراوي حار جداً صيفاً، ويميل للاعتدال نهاراً والبرودة ليلاً في الشتاء، مع نسبة رطوبة منخفضة جداً.</p>
+            </section>
+        </div>
+
+        <div class="interaction-section">
+                
+            <button id="interactiveBtn" class="interactive-btn" data-greeting="يا هلا بك في وادي الدواسر، أرض الأصالة والكرامة والمزارع الخضراء! 🇸🇦">اضغط هنا لتحية المدينة</button>            <p id="responseMsg" class="response-msg"></p>
+        </div>
+    </main>
+
+    <footer class="city-footer">
+        <p>تصميم الطالبة: <strong>مايا عادل</strong></p>
+        <p>مادة تقنية رقمية 2</p>
+    </footer>
+
+    <script src="city_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحة مدينة القويعية - تصميم الطالبة افنان. أخبار المدينة ومشاريعها التنموية.">
+    <title>مدينة القويعية | افنان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="city_style.css">
+</head>
+<body>
+
+    <nav class="mobile-nav">
+        <div class="hamburger" id="hamburger" tabindex="0" aria-label="فتح القائمة">
+            &#9776;
+        </div>
+        <div class="nav-title">موقع مدينتك</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">العودة للموقع الرئيسي</a></li>
+            <li><a href="#news">خبر اليوم</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+        </ul>
+    </nav>
+
+    <div class="founding-day-banner">
+        <img src="https://i.pinimg.com/1200x/98/d6/cd/98d6cdf9b42b976d8a58f62a1c0688b3.jpg" alt="شعار يوم التأسيس" class="founding-logo">
+        <p>يوم بدينا... ثلاثة قرون من العز والفخر. نحتفي بيوم التأسيس (1727م) لنستذكر جذورنا الراسخة وهويتنا الوطنية الأصيلة التي بُنيت عليها أمجاد هذه البلاد.</p>
+    </div>
+
+    <header class="city-header">
+        <h1>أخبار مدينة القويعية</h1>
+        <p class="welcome-msg">أهلاً بكم في القويعية مهد البطولات وعاصمة الثقافة. يسعدنا أن نشارككم أحدث تطورات مدينتنا.</p>
+    </header>
+
+    <main class="city-container">
+        
+        <div class="images-gallery">
+            <img src="https://i.pinimg.com/736x/db/da/4c/dbda4c754071c3fa4b36cf8b57ae4727.jpg" alt="صورة 1 القويعية class="responsive-img">
+            <img src="https://i.pinimg.com/736x/88/42/af/8842afaadc45de31caffd40b9536e5dc.jpg" alt="صورة 2 القويعية" class="responsive-img">
+        </div>
+
+        <div class="news-sections">
+            <section class="news-card">
+                <h2>عن المنطقة</h2>
+                <p>تقع غرب مدينة الرياض وتعتبر نقطة التقاء بين الدرع العربي (الصخور النارية) والرف العربي (الصخور الرسوبية).</p>
+            </section>
+
+            <section class="news-card">
+                <h2>أهم تضاريسها</h2>
+                <p>تتميز بسلاسل جبال العُرض (جرانيتية)، وتحيط بها صحراء الحدباء شرقاً، ويمر بها وادي القويعية.</p>
+            </section>
+
+            <section class="news-card">
+                <h2>الطقس</h2>
+                <p>صحراوي؛ يتسم بالحرارة والجفاف صيفاً، والبرودة القارسة ليلاً في فصل الشتاء.</p>
+            </section>
+        </div>
+
+        <div class="interaction-section">
+                <button id="interactiveBtn" class="interactive-btn" data-greeting="يا هلا بك في القويعية، ديرة الجود والكرم! 🇸🇦">اضغط هنا لتحية المدينة</button>            <p id="responseMsg" class="response-msg"></p>
+        </div>
+    </main>
+
+    <footer class="city-footer">
+        <p>تصميم الطالبة: <strong>افنان</strong></p>
+        <p>مادة تقنية رقمية 2</p>
+    </footer>
+
+    <script src="city_script.js"></script>
+</body>
+</html>

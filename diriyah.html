@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحة مدينة الدرعية - تصميم الطالبة نوف اكرم. أخبار المدينة ومشاريعها التنموية.">
+    <title>مدينة الدرعية | نوف اكرم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="city_style.css">
+</head>
+<body>
+
+    <nav class="mobile-nav">
+        <div class="hamburger" id="hamburger" tabindex="0" aria-label="فتح القائمة">
+            &#9776;
+        </div>
+        <div class="nav-title">موقع مدينتك</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">العودة للموقع الرئيسي</a></li>
+            <li><a href="#news">خبر اليوم</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+        </ul>
+    </nav>
+
+    <div class="founding-day-banner">
+        <img src="https://i.pinimg.com/1200x/98/d6/cd/98d6cdf9b42b976d8a58f62a1c0688b3.jpg" alt="شعار يوم التأسيس" class="founding-logo">
+        <p>يوم بدينا... ثلاثة قرون من العز والفخر. نحتفي بيوم التأسيس (1727م) لنستذكر جذورنا الراسخة وهويتنا الوطنية الأصيلة التي بُنيت عليها أمجاد هذه البلاد.</p>
+    </div>
+
+    <header class="city-header">
+        <h1>أخبار مدينة الدرعية</h1>
+        <p class="welcome-msg">أهلاً بكم في الدرعية، مهد البطولات وعاصمة الثقافة. يسعدنا أن نشارككم أحدث تطورات مدينتنا.</p>
+    </header>
+
+    <main class="city-container">
+        
+        <div class="images-gallery">
+            <img src="https://i.pinimg.com/736x/ec/55/79/ec557962ac500e376ec143d68aa19f37.jpg" alt="صورة 1 للدرعية" class="responsive-img">
+            <img src="https://i.pinimg.com/736x/28/b4/cc/28b4cc8ce349f9d8543c431319f4c966.jpg" alt="صورة 2 للدرعية" class="responsive-img">
+        </div>
+
+        <div class="news-sections">
+            <section class="news-card">
+                <h2>عن المنطقة</h2>
+                <p>مهد انطلاق الدولة السعودية الأولى، وتعتبر اليوم وجهة سياحية وثقافية عالمية مسجلة في اليونسكو (حي الطريف).</p>
+            </section>
+
+            <section class="news-card">
+                <h2>أهم تضاريسها</h2>
+                <p>تقع فوق هضبة تشكل جزءاً من هضبة نجد، ويخترقها وادي حنيفة الشهير الذي تتوزع على ضفافه المزارع والبيوت الطينية القديمة.</p>
+            </section>
+
+            <section class="news-card">
+                <h2>الطقس</h2>
+                <p>صحراوي قاري؛ شديد الحرارة صيفاً (تتجاوز 45°C) وبارد شتاءً، والجو يكون لطيفاً جداً في فصلي الربيع والخريف.</p>
+            </section>
+        </div>
+
+        <div class="interaction-section">
+            <button id="interactiveBtn" class="interactive-btn" data-greeting="أهلاً بك في الدرعية، مهد البطولات وعبق التاريخ! 🇸🇦">اضغط هنا لتحية المدينة</button>            <p id="responseMsg" class="response-msg"></p>
+        </div>
+    </main>
+
+    <footer class="city-footer">
+        <p>تصميم الطالبة: <strong>نوف اكرم</strong></p>
+        <p>مادة تقنية رقمية 2</p>
+    </footer>
+
+    <script src="city_script.js"></script>
+</body>
+</html>
